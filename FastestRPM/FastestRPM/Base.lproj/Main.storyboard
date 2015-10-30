@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Speedometer" translatesAutoresizingMaskIntoConstraints="NO" id="vQ1-xd-ZGM">
+                                <rect key="frame" x="100" y="99.5" width="400" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="eXk-iT-oIJ"/>
+                                    <constraint firstAttribute="height" constant="400" id="x3W-Ai-Vcq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Needle" translatesAutoresizingMaskIntoConstraints="NO" id="gpe-Dn-uLa">
+                                <rect key="frame" x="198" y="246" width="240" height="128"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="7w0-cP-tga"/>
+                                    <constraint firstAttribute="height" constant="128" id="eao-eG-puD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="gpe-Dn-uLa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0go-Op-dWO"/>
+                            <constraint firstItem="vQ1-xd-ZGM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R4n-lg-2rm"/>
+                            <constraint firstItem="gpe-Dn-uLa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ueK-6f-keJ"/>
+                            <constraint firstItem="vQ1-xd-ZGM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yCp-71-9Zw"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ud9-OT-ISG" appends="YES" id="JTn-xU-gk3"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="needle" destination="gpe-Dn-uLa" id="HwN-co-wLc"/>
+                        <outlet property="panAction" destination="ud9-OT-ISG" id="3oz-ev-707"/>
+                        <outlet property="speedometerImg" destination="vQ1-xd-ZGM" id="Dpo-p6-kMP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="ud9-OT-ISG">
+                    <connections>
+                        <action selector="fingerPan:" destination="BYZ-38-t0r" id="dG4-ls-UAl"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="325" y="54"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Needle" width="400" height="400"/>
+        <image name="Speedometer" width="300" height="300"/>
+    </resources>
+</document>
